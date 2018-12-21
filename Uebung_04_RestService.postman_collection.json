@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "3ecd495a-471b-4167-a66b-4094df9a4061",
+		"name": "Uebung_04_RestService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetEmployees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8082/employees",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddEmployee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<employee id=\"2\" dept=\"Development\">\r\n\t<name>\r\n\t\t<firstname>Benedikt</firstname>\r\n\t\t<surname>Waidhofer</surname>\r\n\t</name>\r\n\t<address>\r\n\t\t<town>1</town>\r\n\t\t<street>Sample Avenue</street>\r\n\t\t<houseno>10</houseno>\r\n\t</address>\r\n\t<sex>male</sex>\r\n\t<account>\r\n\t\t<loginname>keitarow</loginname>\r\n\t\t<password>udbesurprised</password>\r\n\t\t<role>Developer</role>\r\n\t</account>\r\n\t<birthdate>2000-04-10</birthdate>\r\n</employee>"
+				},
+				"url": {
+					"raw": "localhost:8082/employees",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddEmployeeEntry",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<entry>\r\n    <description>Class Rework</description>\r\n    <employeeID>1</employeeID>\r\n    <projectID>0</projectID>\r\n    <start>2018-12-20T08:00:00+01:00</start>\r\n    <end>2018-12-20T12:00:00+01:00</end>\r\n</entry>"
+				},
+				"url": {
+					"raw": "localhost:8082/employees/ihazzikostas/entries",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"employees",
+						"ihazzikostas",
+						"entries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EditEmployee",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<employee id=\"1\" dept=\"Development\">\n        <name>\n            <firstname>Ion</firstname>\n            <surname>Hazzikostas</surname>\n        </name>\n        <address>\n            <town>1</town>\n            <street>Sample Boulevard</street>\n            <houseno>25</houseno>\n        </address>\n        <sex>male</sex>\n        <account>\n            <loginname>ihazzikostas</loginname>\n            <password>udbesurprised</password>\n            <role>Lead Developer</role>\n        </account>\n        <birthdate>1979-09-25</birthdate>\n    </employee>"
+				},
+				"url": {
+					"raw": "localhost:8082/employees/ihazzikostas",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"employees",
+						"ihazzikostas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetEmployee",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8082/employees/ihazzikostas",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"employees",
+						"ihazzikostas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetEmployeeEntries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8082/employees/ihazzikostas/entries",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"employees",
+						"ihazzikostas",
+						"entries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetEmployeeEntriesStartEnd",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8082/employees/ihazzikostas/entries?start=2018-12-17&end=2018-12-18",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"employees",
+						"ihazzikostas",
+						"entries"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "2018-12-17"
+						},
+						{
+							"key": "end",
+							"value": "2018-12-18"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
