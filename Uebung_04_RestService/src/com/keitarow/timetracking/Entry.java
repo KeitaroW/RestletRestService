@@ -1,7 +1,7 @@
 //
 // Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.8-b130911.1802 generiert 
 // Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
+// ï¿½nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
 // Generiert: 2018.10.21 um 09:09:40 PM CEST 
 //
 
@@ -9,16 +9,18 @@
 package com.keitarow.timetracking;
 
 import java.math.BigInteger;
+import java.util.Date;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Java-Klasse für entry complex type.
+ * <p>Java-Klasse fï¿½r entry complex type.
  * 
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
@@ -41,6 +43,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "entry")
 @XmlType(name = "entry", propOrder = {
     "description",
     "employeeID",
@@ -58,10 +61,10 @@ public class Entry {
     protected BigInteger projectID;
     @XmlElement(required = true)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar start;
+    protected Date start;
     @XmlElement(required = true)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar end;
+    protected Date end;
 
     /**
      * Ruft den Wert der description-Eigenschaft ab.
@@ -143,7 +146,7 @@ public class Entry {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public XMLGregorianCalendar getStart() {
+    public Date getStart() {
         return start;
     }
 
@@ -155,7 +158,7 @@ public class Entry {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setStart(XMLGregorianCalendar value) {
+    public void setStart(Date value) {
         this.start = value;
     }
 
@@ -167,7 +170,7 @@ public class Entry {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public XMLGregorianCalendar getEnd() {
+    public Date getEnd() {
         return end;
     }
 
@@ -179,7 +182,7 @@ public class Entry {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setEnd(XMLGregorianCalendar value) {
+    public void setEnd(Date value) {
         this.end = value;
     }
 

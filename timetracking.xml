@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<company name="Activision Blizzard" town="Santa Monica" postcode="90405" street="Ocean Park Boulevard" houseno="3100" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="timetracking.xsd">
+	<towns>
+		<town id="1">
+			<name>Santa Monica</name>
+			<postcode>90405</postcode>
+		</town>
+	</towns>
+	<roles>
+		<role>CEO</role>
+		<role>Head of Department</role>
+		<role>Director</role>
+		<role>Lead Developer</role>
+		<role>Developer</role>
+		<role>Lead Designer</role>
+		<role>Designer</role>
+		<role>Server Admin</role>
+		<role>Server Manager</role>
+		<role>Community Manager</role>
+		<role>Support</role>
+		<role>Accountant</role>
+	</roles>
+	<employees>
+		<employee id="1" dept="Development">
+			<name>
+				<firstname>Ion</firstname>
+				<surname>Hazzikostas</surname>
+			</name>
+			<address>
+				<town>1</town>
+				<street>Sample Boulevard</street>
+				<houseno>23</houseno>
+			</address>
+			<sex>male</sex>
+			<account>
+				<loginname>ihazzikostas</loginname>
+				<password>nobodyguessesit</password>
+				<role>Lead Developer</role>
+			</account>
+			<birthdate>1979-09-25</birthdate>
+		</employee>
+	</employees>
+	<departments>
+		<department>Management</department>
+		<department>Marketing</department>
+		<department>Accounting</department>
+		<department>Development</department>
+		<department>Design</department>
+		<department>Server Management</department>
+	</departments>
+	<projects>
+		<project id="1">
+			<name>World of Warcraft</name>
+			<leaderID>1</leaderID>
+			<start>1999-05-30T09:00:00</start>
+			<expectedEnd>2020-06-30T20:00:00</expectedEnd>
+			<members>
+				<member>1</member>
+			</members>
+		</project>
+	</projects>
+	<entries>
+		<entry>
+            <description>New Event</description>
+            <employeeID>1</employeeID>
+            <projectID>0</projectID>
+            <start>2018-12-17T08:00:00+01:00</start>
+            <end>2018-12-17T12:00:00+01:00</end>
+        </entry>
+		<entry>
+			<description>New Event</description>
+			<employeeID>1</employeeID>
+			<projectID>0</projectID>
+			<start>2018-12-17T12:30:00+01:00</start>
+			<end>2018-12-17T17:00:00+01:00</end>
+		</entry>
+		<entry>
+            <description>New Event</description>
+            <employeeID>1</employeeID>
+            <projectID>0</projectID>
+            <start>2018-12-18T08:00:00+01:00</start>
+            <end>2018-12-18T12:00:00+01:00</end>
+        </entry>
+		<entry>
+            <description>Class Rework</description>
+            <employeeID>1</employeeID>
+            <projectID>0</projectID>
+            <start>2018-12-18T12:30:00+01:00</start>
+            <end>2018-12-18T17:00:00+01:00</end>
+        </entry>
+		<entry>
+            <description>Class Rework</description>
+            <employeeID>1</employeeID>
+            <projectID>0</projectID>
+            <start>2018-12-19T08:00:00+01:00</start>
+            <end>2018-12-19T12:00:00+01:00</end>
+        </entry>
+		<entry>
+            <description>Class Rework</description>
+            <employeeID>1</employeeID>
+            <projectID>0</projectID>
+            <start>2018-12-19T12:30:00+01:00</start>
+            <end>2018-12-19T17:00:00+01:00</end>
+        </entry>
+	</entries>
+</company>

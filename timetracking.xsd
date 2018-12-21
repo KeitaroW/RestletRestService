@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="company" type="company"/>
+<xs:complexType name="company">
+	<xs:sequence>
+		<xs:element name="towns" type="towns"/>
+		<xs:element name="roles" type="roles"/>
+		<xs:element name="employees" type="employees"/>
+		<xs:element name="departments" type="departments"/>
+		<xs:element name="projects" type="projects"/>
+		<xs:element name="entries" type="entries"/>
+	</xs:sequence>
+	<xs:attribute name="name" type="xs:string" use="required"/>
+	<xs:attribute name="town" type="xs:string" use="required"/>
+	<xs:attribute name="postcode" type="xs:integer" use="required"/>
+	<xs:attribute name="street" type="xs:string" use="required"/>
+	<xs:attribute name="houseno" type="xs:string" use="required"/>
+</xs:complexType>
+<xs:complexType name="roles">
+	<xs:choice maxOccurs="unbounded">
+		<xs:element name="role" type="xs:string" minOccurs="0"/>
+	</xs:choice>
+</xs:complexType>
+<xs:complexType name="employees">
+	<xs:choice maxOccurs="unbounded">
+		<xs:element name="employee" type="employee" minOccurs="0"/>
+	</xs:choice>
+</xs:complexType>
+<xs:complexType name="employee">
+	<xs:sequence>
+		<xs:element name="name" type="personname"/>
+		<xs:element name="address" type="address"/>
+		<xs:element name="sex" type="restrictedSex"/>
+		<xs:element name="account" type="logininfo"/>
+		<xs:element name="birthdate" type="xs:date"/>
+	</xs:sequence>
+	<xs:attribute name="id" type="xs:integer" use="required"/>
+	<xs:attribute name="dept" type="xs:string" use="required"/>
+</xs:complexType>
+<xs:complexType name="departments">
+	<xs:choice maxOccurs="unbounded">
+		<xs:element name="department" type="xs:string" minOccurs="0"/>
+	</xs:choice>
+</xs:complexType>
+
+<xs:complexType name="projects">
+	<xs:choice maxOccurs="unbounded">
+		<xs:element name="project" type="project" minOccurs="0"/>
+	</xs:choice>
+</xs:complexType>
+<xs:complexType name="project">
+	<xs:sequence>
+		<xs:element name="name" type="xs:string"/>
+		<xs:element name="leaderID" type="xs:integer"/>
+		<xs:element name="start" type="xs:dateTime"/>
+		<xs:element name="expectedEnd" type="xs:dateTime"/>
+		<xs:element name="members" type="members"/>
+	</xs:sequence>
+	<xs:attribute name="id" type="xs:integer" use="required"/>
+</xs:complexType>
+<xs:complexType name="members">
+	<xs:choice maxOccurs="unbounded">
+		<xs:element name="member" type="xs:integer" minOccurs="0"/>
+	</xs:choice>
+</xs:complexType>
+<xs:complexType name="entries">
+	<xs:choice maxOccurs="unbounded">
+		<xs:element name="entry" type="entry" minOccurs="0"/>
+	</xs:choice>
+</xs:complexType>
+<xs:complexType name="entry">
+	<xs:sequence>
+		<xs:element name="description" type="xs:string"/>
+		<xs:element name="employeeID" type="xs:integer"/>
+		<xs:element name="projectID" type="xs:integer"/>
+		<xs:element name="start" type="xs:dateTime"/>
+		<xs:element name="end" type="xs:dateTime"/>
+	</xs:sequence>
+</xs:complexType>
+<xs:complexType name="personname">
+	<xs:sequence>
+		<xs:element name="firstname" type="xs:string"/>
+		<xs:element name="surname" type="xs:string"/>
+	</xs:sequence>
+</xs:complexType>
+<xs:complexType name="logininfo">
+	<xs:sequence>
+		<xs:element name="loginname" type="xs:string"/>
+		<xs:element name="password" type="xs:string"/>
+		<xs:element name="role" type="xs:string"/>
+	</xs:sequence>
+</xs:complexType>
+<xs:complexType name="towns">
+	<xs:choice maxOccurs="unbounded">
+		<xs:element name="town" type="town" minOccurs="1"/>
+	</xs:choice>
+</xs:complexType>
+<xs:complexType name="town">
+	<xs:sequence>
+		<xs:element name="name" type="xs:string"/>
+		<xs:element name="postcode" type="xs:integer"/>
+	</xs:sequence>
+	<xs:attribute name="id" type="xs:integer" use="required"/>
+</xs:complexType>
+<xs:complexType name="address">
+	<xs:sequence>
+		<xs:element name="town" type="xs:integer"/>
+		<xs:element name="street" type="xs:string"/>
+		<xs:element name="houseno" type="xs:integer"/>
+	</xs:sequence>
+</xs:complexType>
+<xs:simpleType name="restrictedSex">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="male"/>
+		<xs:enumeration value="female"/>
+	</xs:restriction>
+</xs:simpleType>
+</xs:schema>
