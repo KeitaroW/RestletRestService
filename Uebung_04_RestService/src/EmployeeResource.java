@@ -8,7 +8,7 @@ import org.restlet.resource.ResourceException;
  *
  * @author Benedikt
  */
-public class EmployeeResource extends ServerResource {
+public class EmployeeResource extends ServerResource implements IEmployeeResource {
     private Company company;
     
     @Override

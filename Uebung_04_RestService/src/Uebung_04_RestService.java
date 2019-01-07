@@ -18,7 +18,7 @@ public class Uebung_04_RestService {
     public static void main(String[] args) throws Exception {
         Application app = new ServerApp();
         Component component = new Component();
-        component.getServers().add(Protocol.HTTP, 8082);
+        component.getServers().add(Protocol.HTTP, 8083);
         component.getDefaultHost().attach(app);
         component.start();
     }

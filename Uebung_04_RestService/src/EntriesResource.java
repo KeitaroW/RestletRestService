@@ -13,7 +13,7 @@ import org.restlet.resource.ResourceException;
  *
  * @author Benedikt
  */
-public class EntriesResource extends ServerResource {
+public class EntriesResource extends ServerResource implements IEntriesResource {
     private Company company;
     
     @Override
