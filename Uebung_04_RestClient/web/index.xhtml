@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Timetracking</title>
+    </h:head>
+    <h:body>
+        <p>Get Information and Entries of an Employee</p>
+        <h:form>
+            <table>
+                <tr>
+                    <td>Employee</td>
+                    <td>
+                        <p:selectOneMenu id="EmployeeLoginname" value="#{employeesBean.loginname}" style="width:125px">
+                            <f:selectItem itemLabel="Select One" itemValue="" />
+                            <f:selectItems value="#{employeesBean.loginnameList}" />
+                            <!--<p:ajax onstart="requestEmployee()" update="employee"/>
+                            <p:ajax onstart="requestEntries()" update="entry"/>-->
+                        </p:selectOneMenu>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <p:commandButton value="Show Data" update="employee entry" action="#{employeesBean.requestData()}"/>
+                    </td>
+                </tr>
+            </table>
+        </h:form>
+        <p>Information</p>
+        <p:dataTable id="employee" var="employee" value="#{employeesBean.employee}">
+            <p:column headerText="Firstname">
+                <h:outputText value="#{employee.name.firstname}" />
+            </p:column>
+            <p:column headerText="Surname">
+                <h:outputText value="#{employee.name.surname}" />
+            </p:column>
+            <p:column headerText="Department">
+                <h:outputText value="#{employee.dept}" />
+            </p:column>
+        </p:dataTable>
+        <p>Entries</p>
+        <p:dataTable id="entry" var="entry" value="#{employeesBean.entries.entry}">
+            <p:column headerText="Description">
+                <h:outputText value="#{entry.description}"/>
+            </p:column>
+            <p:column headerText="Employee">
+                <h:outputText value="#{employeesBean.getEmployeeName(entry.employeeID)}" />
+            </p:column>
+            <p:column headerText="Start">
+                <h:outputText value="#{entry.start}" />
+            </p:column>
+            <p:column headerText="End">
+                <h:outputText value="#{entry.end}" />
+            </p:column>
+        </p:dataTable>
+    </h:body>
+</html>
+
